@@ -2,19 +2,30 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./db'); // Certifique-se que seu db.js exporta o banco corretamente
+require('dotenv').config();
+
 
 const app = express();
 const PORT = 3000;
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../public')));
+
 
 // Configura middlewares
 app.use(cors());
 app.use(express.json()); // Para parsear JSON no corpo das requisições
 
 // Configurações do Telegram
-const TELEGRAM_TOKEN = '7996420247:AAFnGp8WV1Nf2GNRRJbSkTWjWR2XcnrPVd4'; // Seu token do bot Telegram
-const TELEGRAM_CHAT_ID = 6826548559; // Coloque aqui o chat_id que você obteve (número, sem aspas)
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 // ---------------- ROTAS ---------------- //
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 
 // Rota para listar todas as demandas
 app.get('/api/demandas', (req, res) => {
