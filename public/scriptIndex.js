@@ -157,7 +157,7 @@ function carregarDashboard() {
 }
 
 function carregarResumoDemandas() {
-  fetch('http://localhost:3000/api/demandas')
+  fetch('https://dashboard-f6ek.onrender.com/api/demandas')
     .then(res => res.json())
     .then(demandas => {
       const contagemPrioridades = { Alta: 0, Média: 0, Baixa: 0 };
@@ -187,7 +187,7 @@ function carregarDemandas() {
   document.getElementById('conteudoPrincipal').innerHTML = conteudoDemandas;
  
 
-  fetch('http://localhost:3000/api/demandas')
+  fetch('https://dashboard-f6ek.onrender.com/api/demandas')
     .then(res => res.json())
     .then(demandas => {
       const container = document.getElementById('cardsContainer');
@@ -289,7 +289,7 @@ function configurarBotaoExcluir() {
     }
     if (!confirm(`Deseja excluir a demanda "${demandaAtual.nomeDemanda}"?`)) return;
 
-    fetch(`http://localhost:3000/api/demandas/${demandaAtual.id}`, {
+    fetch(`https://dashboard-f6ek.onrender.com/api/demandas/${demandaAtual.id}`, {
       method: 'DELETE'
     })
     .then(res => res.json())
@@ -323,7 +323,7 @@ function configurarBotaoEditar() {
     const novaDescricao = prompt('Nova descrição:', demandaAtual.descricao);
 
     if (novoNome && novaDescricao) {
-      fetch(`http://localhost:3000/api/demandas/${demandaAtual.id}`, {
+      fetch(`https://dashboard-f6ek.onrender.com/api/demandas/${demandaAtual.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -366,7 +366,7 @@ function configurarBotaoAtualizarStatus() {
 
     const novoStatus = document.getElementById('selectStatusModal').value;
 
-    fetch(`http://localhost:3000/api/demandas/${demandaAtual.id}`, {
+    fetch(`https://dashboard-f6ek.onrender.com/api/demandas/${demandaAtual.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -414,7 +414,7 @@ function carregarNovaDemanda() {
     const status = document.getElementById('status').value;
     const categoria = document.getElementById('categoria').value;
 
-    fetch('http://localhost:3000/api/demandas', {
+    fetch('https://dashboard-f6ek.onrender.com/api/demandas', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nomeDemanda, nomeSolicitante, descricao, setor, prioridade, status, categoria })
@@ -468,7 +468,7 @@ function sair() {
   window.location.href = 'login.html';
 }
 function carregarMensagemTecnico() {
-  fetch('http://localhost:3000/api/mensagem-tecnico')
+  fetch('https://dashboard-f6ek.onrender.com/api/mensagem-tecnico')
     .then(res => res.json())
     .then(data => {
       console.log("Mensagem carregada:", data.mensagem); // ✅ AJUDA A TESTAR
@@ -500,7 +500,7 @@ function configurarEventoEnviarMensagemTecnico() {
       return;
     }
 
-    fetch('http://localhost:3000/api/mensagem-tecnico', {
+    fetch('https://dashboard-f6ek.onrender.com/api/mensagem-tecnico', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ mensagem })
