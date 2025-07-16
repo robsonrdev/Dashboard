@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Demanda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+
+  <div class="right-panel">
+    <h2>NOVA DEMANDA</h2>
+    <form id="demandaForm">
+      <label for="nomeDemanda">NOME DA DEMANDA</label>
+      <input type="text" id="nomeDemanda" placeholder="Escreva aqui" required>
+
+      <label for="nomeSolicitante">NOME DO SOLICITANTE</label>
+      <input type="text" id="nomeSolicitante" required>
+      <div id="erroNome" class="error-msg" style="display: none;">Erro! Utilize apenas letras!</div>
+
+      <label for="descricao">DESCRIÇÃO DETALHADA DA DEMANDA</label>
+      <textarea id="descricao" rows="3" placeholder="Digite aqui" required></textarea>
+
+      <label for="setor">SETOR</label>
+      <select id="setor" required>
+        <option value="">SETORES</option>
+        <option>Vendas</option>
+        <option>Financeiro</option>
+        <option>RH</option>
+        <option>Operações</option>
+        <option>Marketing</option>
+        <option>TI</option>
+      </select>
+
+      <label for="prioridade">PRIORIDADE</label>
+      <select id="prioridade" required>
+        <option value="">Selecione</option>
+        <option>Baixa</option>
+        <option>Média</option>
+        <option>Alta</option>
+      </select>
+
+      <label for="categoria">CATEGORIA</label>
+      <select id="categoria" required>
+        <option>Sistema</option>
+        <option>Hardware</option>
+        <option>Software</option>
+        <option>Rede</option>
+        <option>Outros</option>
+      </select>
+
+      <div class="buttons">
+        <button type="reset" class="btn-limpar">LIMPAR</button>
+        <button type="submit" class="btn-criar">CRIAR DEMANDA</button>
+      </div>
+
+      <div class="success-msg" id="mensagemSucesso" style="display:none;">
+        ✅ Demanda cadastrada com sucesso!
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

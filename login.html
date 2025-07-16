@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="principal-login">
+      <div id="cont-img">
+       <img id="logo-login" src="img/image-removebg-preview (1).png" alt="">
+       <img id="detalhe" src="img/chat-assistente.png" alt="">
+      </div>
+      
+        <div class="container">
+      <form id="loginForm">
+      
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" name="usuario" required>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+        <button type="submit">Entrar</button>
+        <p id="erroLogin" style="color:red; display:none;">Usuário ou senha incorretos!</p>
+      </form>
+        </div>
+    </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

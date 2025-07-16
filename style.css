@@ -1,0 +1,462 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#principal{
+  background-color: #003366;
+  height: 100vh;
+  max-height:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#demandas{
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100vw;
+  max-height:100%;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px; 
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+#usuario-img{
+  height: 60px;
+  width: 60px;
+  margin-left: 40px;
+  border-radius: 100%;
+}
+#menu{
+  width: 300px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+  color: white;
+}
+#logo{
+  height: 250px;
+  position: relative;
+  left: 10px;
+  top: -60px;
+}
+#bloco-usuario{
+  display: flex;
+  margin-top: 30px;
+  align-items: flex-end;
+}
+#resumo{
+  position: relative;
+  left: 20px;
+  top: -5px;
+}
+.tec{
+  padding: 0%;
+  margin: 0%;
+  font-size: 10px;
+  font-weight: bold;
+}
+#user{
+  font-size: 15px;
+}
+.nav{
+  text-align: left;
+  position: relative;
+  top: -100px;
+  left: 40px;
+  font-size: 20px;
+  padding-left: 30px;
+  margin: 50px 0px 50px 20px;
+}
+
+/* Formulario */
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+.right-panel {
+  width: 100%;
+  height: 100%;
+  margin: 50px;
+}
+
+h2 {
+  color: #0c3255;
+  margin-bottom: 30px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: block;
+  color: #222;
+}
+
+input, textarea {
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+select{
+   width: 92%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+select:focus, input:focus, textarea:focus {
+  outline: none;
+  border: 1px solid #5a43f1;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.error-msg {
+  color: red;
+  font-size: 11px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-limpar, .btn-criar {
+  background-color: #fbc87c;
+  color: #000;
+}
+
+.success-msg {
+  margin-top: 10px;
+  color: green;
+}
+
+/* demandas */
+
+.cards-grid {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  color: #002d5c;
+}
+
+.card p {
+  color: black;
+  margin-top: 20px;
+}
+
+.prioridade {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+.prioridade-alta {
+  background-color: #fdadad;
+  color: black;
+}
+
+.prioridade-media {
+  background-color: #f7da71;
+  color: black;
+}
+
+.prioridade-baixa {
+  background-color: #97ff8b;
+  color: black;
+}
+
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.close-btn {
+  color: #aaa;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: black;
+}
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-actions .btn-edit,
+.modal-actions .btn-delete {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.modal-actions .btn-edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-actions .btn-edit:hover {
+  background-color: #0056b3;
+}
+
+.modal-actions .btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-actions .btn-delete:hover {
+  background-color: #a71d2a;
+}
+
+
+
+.nav a {
+  display: block;
+  position: relative;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+  width: 400px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 1;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav a.ativo {
+  background-color: #f2f2f2; /* cor de fundo da aba ativa */
+  color: #002d62;            /* cor do texto da aba ativa */
+  font-weight: bold;
+}
+
+#formMensagemTecnico{
+  text-align: center;
+  position: relative;
+  left: 18px;
+}
+#conteudoPrincipal{
+  display: flex;
+}
+
+#mensagemTecnicoContainer{
+  background-color: #ffffff;
+  z-index: 1;
+  position: absolute;
+  top: 700px;
+  left: 80px;
+  text-align: center;
+  height: 100px;
+  border-radius: 10px;
+  width: 230px;
+  color: black;
+}
+#formMensagemTecnico{
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 15px;
+  position: absolute;
+  width: 320px;
+  top: 700px;
+  z-index: 999;
+}
+#btnEnviarMensagem{
+  border: solid 2px #003366;
+  background-color: transparent;
+  position: relative;
+  width: 200px;
+  top: -5px;
+  color: black;
+}
+#mensagemTecnicoTexto{
+  color: #000;
+}
+
+
+button{
+    transform: scale(1);
+    width: 320px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0f3860;
+    color: white;
+}
+
+button:hover{
+    transform: scale(1.01);
+    transition: all 0.6s;
+    box-shadow: 0px 0px 10px #0f3860;
+}
+.container{
+  background-color: white;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-right: 150px;
+}
+
+#cont-img{
+  background-color: #003366;
+  width:700px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#logo-login{
+  position: absolute;
+  left: 200px;
+  z-index: 999;
+}
+#detalhe{
+  position: absolute;
+  height: 955px;
+  z-index: 1;
+  top: -10px;
+  left: 370px;
+}
+#principal-login{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#usuario{
+  width: 300px;
+  border-radius: 15px;
+  border-color: gray;
+}
+#senha{
+  width: 300px;
+  border-radius: 15px;
+  border-color: gray;
+}
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.173);
+}
+#loginForm label{
+  font-size: 18px;
+  font-weight: bold;
+}
+#sair{
+  width: 70px;
+  height: 40px;
+  background-color: red;
+  position: relative;
+  left: 50px;
+}
+
+.prioridade-painel {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card-prioridade {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+}
+
+.prioridade-baixa {
+  background-color: #2ecc71;
+}
+
+.prioridade-media {
+  background-color: #f1c40f;
+  color: #333;
+}
+
+.prioridade-alta {
+  background-color: #e74c3c;
+}
+

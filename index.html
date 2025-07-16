@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Dashboard</title>
+</head>
+<body>
+  <div id="principal">
+    <div id="menu">
+      <div id="bloco-usuario">
+        <img id="usuario-img" src="img/usuario.png" alt="Usuário" />
+        <div id="resumo">
+          <h1 class="tec" id="user">Usuário</h1>
+          <p class="tec">Téc Informática</p>
+        </div>
+        
+      <button id="sair" onclick="sair()">Sair</button>
+      </div>
+
+      <img id="logo" src="img/image-removebg-preview (1).png" alt="Logo" />
+
+      <h1 class="nav"><a href="#" id="linkDashboard">Dashboard</a></h1>
+      <h1 class="nav"><a href="#" id="linkDemandas">Demandas</a></h1>
+      <h1 class="nav"><a href="#" id="linkNovaDemanda">Nova Demanda</a></h1>
+
+      <!-- Formulário para o técnico enviar mensagem para todos, inicialmente escondido -->
+      <div id="formMensagemTecnico" >
+        <h3>Enviar mensagem para todos os usuários</h3>
+        <textarea id="mensagemInput" rows="3" placeholder="Digite a mensagem do técnico aqui..."></textarea>
+        <button id="btnEnviarMensagem">Enviar Mensagem</button>
+        <div id="statusMensagem" style="color: green; display: none; margin-top: 5px;">Mensagem enviada com sucesso!</div>
+      </div>
+
+         <div id="mensagemTecnicoContainer" class="mensagem-tecnico" style="display: none;">
+  <strong>Mensagem do Técnico:</strong>
+  <p id="mensagemTecnicoTexto"></p>
+</div>
+    </div>
+
+    <div id="demandas">
+      <div id="conteudoPrincipal">
+        <!-- Conteúdo dinâmico carregado pelo JS -->
+      </div>
+    </div>
+    
+  </div>
+
+
+  <script src="scriptIndex.js"></script>
+
+  <!-- Modal de detalhes -->
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-btn" style="cursor:pointer;">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <p><strong>Solicitante:</strong> <span id="modalSolicitante"></span></p>
+      <p><strong>Setor:</strong> <span id="modalSetor"></span></p>
+      <p><strong>Prioridade:</strong> <span id="modalPrioridade"></span></p>
+      <p><strong>Categoria:</strong> <span id="modalCategoria"></span></p>
+      <p><strong>Descrição:</strong></p>
+      <p id="modalDescricao"></p>
+      <p><strong>Data:</strong> <span id="modalData"></span></p>
+
+      <label for="selectStatusModal">Status:</label>
+      <select id="selectStatusModal" name="status">
+        <option value="Aguardando">Aguardando</option>
+        <option value="Em Andamento">Em Andamento</option>
+        <option value="Concluído">Concluído</option>
+      </select>
+
+      <div class="modal-actions">
+        <button class="btn-edit">Editar</button>
+        <button id="btnAtualizarStatus" type="button">Atualizar Status</button>
+        <button class="btn-delete">Excluir</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
